@@ -1,0 +1,25 @@
+{
+  "name": "@unify/youi",
+  "version": "1.0.0",
+  "description": "> TODO: description",
+  "author": "ssogYu <yushunsong@126.com>",
+  "homepage": "https://github.com/ssogYu/tip-top#readme",
+  "license": "MIT",
+  "main": "index.ts",
+  "publishConfig": {
+    "registry": "https://registry.yarnpkg.com"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ssogYu/tip-top.git"
+  },
+  "scripts": {
+    "test": "babel ./index.js --out-file ./lib/index.j"
+  },
+  "bugs": {
+    "url": "https://github.com/ssogYu/tip-top/issues"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.23.6"
+  }
+}

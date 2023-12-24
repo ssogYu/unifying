@@ -1,0 +1,22 @@
+{
+  "name": "@unify/utils",
+  "version": "1.0.0",
+  "description": "> TODO: description",
+  "author": "ssogYu <yushunsong@126.com>",
+  "homepage": "https://github.com/ssogYu/tip-top#readme",
+  "license": "MIT",
+  "main": "index.ts",
+  "publishConfig": {
+    "registry": "https://registry.yarnpkg.com"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ssogYu/tip-top.git"
+  },
+  "scripts": {
+    "test": "node ./__tests__/@unify/utils.test.js"
+  },
+  "bugs": {
+    "url": "https://github.com/ssogYu/tip-top/issues"
+  }
+}
