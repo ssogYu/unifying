@@ -5,6 +5,9 @@
     "packages/*"
   ],
   "dependencies": {},
+  "scripts": {
+    "prepare": "husky install"
+  },
   "devDependencies": {
     "@babel/cli": "^7.23.4",
     "@babel/core": "^7.23.6",
@@ -12,8 +15,19 @@
     "@typescript-eslint/eslint-plugin": "^6.15.0",
     "@typescript-eslint/parser": "^6.15.0",
     "eslint": "^8.56.0",
+    "eslint-config-prettier": "^9.1.0",
+    "eslint-plugin-prettier": "^5.1.2",
     "eslint-plugin-react": "^7.33.2",
+    "husky": "^8.0.3",
     "lerna": "^8.0.1",
+    "lint-staged": "^15.2.0",
+    "prettier": "^3.1.1",
     "typescript": "^5.3.3"
+  },
+  "lint-staged": {
+    "*.@(js|ts|tsx|jsx|json)": [
+      "eslint --ext .ts,.tsx,.js --fix",
+      "prettier --write"
+    ]
   }
 }

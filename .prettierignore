@@ -1,0 +1,11 @@
+node_modules/
+doc/
+.eslintrc.js
+.vscode/
+babel.config.js
+lerna.json
+README.md
+todo.md
+tsconfig.json
+package.json 
+.prettierrc

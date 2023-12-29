@@ -2,7 +2,7 @@
 
 ```
 npm install --global lerna
-lerna init 
+lerna init
 ```
 
 ```
@@ -15,9 +15,9 @@ lerna init
 
 2. **创建一个package在中packages**
 
- ```
- lerna create 「package」
- ```
+```
+lerna create 「package」
+```
 
 3. **依赖安装管理**
 
@@ -30,8 +30,8 @@ lerna add react
 - 为指定的 package 安装特定依赖
 
 ```
-lerna add react-dom packages/package1 
-// or 
+lerna add react-dom packages/package1
+// or
 lerna add react-dom --scope=package1
 ```
 
@@ -44,8 +44,8 @@ npm install typescript -D
 - package 之间的相互依赖（会在 package/package.json 下添加该依赖）
 
 ```
-lerna add package2 --scope package1 
-// or 
+lerna add package2 --scope package1
+// or
 lerna add package2 packages/package1
 ```
 
@@ -90,4 +90,3 @@ lerna publish
     .推送 commit 和 tags 到远程仓库。
 
 ```
-

@@ -1,5 +1,3 @@
-
-
 1. 安装babel
 
 ```
@@ -26,8 +24,6 @@ module.exports = {
 
 ```
 
-
-
 3. 子模块添加babelrc文件继承根目录babe.config.js
 
 ```
@@ -35,7 +31,5 @@ module.exports = {
   "extends": "../../babel.config.js"
 }
 ```
-
-
 
 参考：https://juejin.cn/post/7282363816020983869?searchId=20231224233551824FC8E002459B68EE71

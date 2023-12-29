@@ -1,6 +1,6 @@
 ### yarn install
 
-  **yarn install 会将 package 下的依赖统一安装到根目录之下**
+**yarn install 会将 package 下的依赖统一安装到根目录之下**
 
 ### yarn add
 
@@ -19,7 +19,7 @@ yarn workspace package1 add react react-dom --save
 - 添加依赖到根目录 node_modules 中
 
 ```
-cd 根目录 
+cd 根目录
 yarn add @babel/core -D -W （-W 表示将依赖添加到 workspaces 根目录）
 ```
 
@@ -54,4 +54,3 @@ yarn workspace package1 run test
 ```
 yarn workspaces run test
 ```
-

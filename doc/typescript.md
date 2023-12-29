@@ -17,6 +17,3 @@ yarn add typesript -D -W
   "extends": "../../tsconfig.json"
 }
 ```
-
-
-
