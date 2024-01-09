@@ -1,3 +1,14 @@
 {
-  "extends": "../../tsconfig.json"
+  "extends": "../../tsconfig.json",
+  "compilerOptions": {
+    "declaration": true,
+    "declarationDir": "./dist/types",
+    "emitDeclarationOnly": true,
+    "baseUrl":"./",//
+    "paths": { //用于设置模块名称基于baseUrl的路径映射关系
+      "@/*": ["src/*"]
+    },
+    "rootDir": "src"
+  },
+  "include": ["src/*.ts"]
 }
