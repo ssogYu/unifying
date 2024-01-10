@@ -1,14 +1,14 @@
 {
-"compilerOptions":{
-  "target": "esnext",
-  "module": "esnext",
-  "lib": ["esnext", "dom", "dom.iterable"],
-  "allowJs": true,
-  "removeComments": true,//删除注释
-  "strict": true,
-  "noImplicitAny": true,//不允许隐式的any类型
-  "strictNullChecks": false,//不允许把null,undefined赋值给其他类型变量
-  "noUnusedLocals": true,//声明但未使用的变量，只提示不报错
-  "moduleResolution": "node",
-}
+  "compilerOptions":{
+    "target": "esnext",
+    "module": "esnext",
+    "lib": ["esnext", "dom", "dom.iterable"],
+    "allowJs": true,
+    "removeComments": true,//删除注释
+    "strict": true,
+    "noImplicitAny": true,//不允许隐式的any类型
+    "strictNullChecks": false,//不允许把null,undefined赋值给其他类型变量
+    "noUnusedLocals": true,//声明但未使用的变量，只提示不报错
+    "moduleResolution": "node",
+  }
 }

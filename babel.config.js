@@ -9,6 +9,5 @@ module.exports = {
       },
     ],
   ],
-  plugins: [],
-  //   babelrcRoots: [".", "packages/*"],
+  plugins: ["@babel/plugin-transform-runtime"],
 };
