@@ -1,5 +1,5 @@
-const add = (x: number, y: number) => {
-  return x + y;
+export const add = (a: number, b: number) => {
+  return a + b;
 };
-const value = add(10, 1);
-console.log(value);
+export const a: number = 1;
+add(1, 2);

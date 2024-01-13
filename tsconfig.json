@@ -8,7 +8,7 @@
     "strict": true,
     "noImplicitAny": true,//不允许隐式的any类型
     "strictNullChecks": false,//不允许把null,undefined赋值给其他类型变量
-    "noUnusedLocals": true,//声明但未使用的变量，只提示不报错
+    "noUnusedLocals": false,//声明但未使用的变量，只提示不报错
     "moduleResolution": "node",
   }
 }
