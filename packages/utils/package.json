@@ -10,8 +10,8 @@
   "types": "dist/types/index.d.ts",
   "scripts": {
     "clean": "rimraf dist",
-    "build:type": "yarn clean",
-    "build": "yarn build:type && cross-env NODE_ENV=prod rollup -c --bundleConfigAsCjs && ./tsconfig.types.json"
+    "build:type": "tsc -b ./tsconfig.types.json",
+    "build": "yarn clean && yarn build:type && cross-env NODE_ENV=prod rollup -c --bundleConfigAsCjs"
   },
   "files": [
     "dist"

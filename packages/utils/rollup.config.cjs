@@ -20,7 +20,7 @@ const config = defineConfig({
       format: 'es',
     },
     {
-      name: 'RollupTsTemplate',
+      name: 'utils',
       file: pkg.umd,
       format: 'umd',
     },
