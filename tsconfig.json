@@ -10,5 +10,14 @@
     "strictNullChecks": false,//不允许把null,undefined赋值给其他类型变量
     "noUnusedLocals": false,//声明但未使用的变量，只提示不报错
     "moduleResolution": "node",
-  }
+    "jsx": "react",
+    "allowSyntheticDefaultImports": true
+  },
+  "exclude": [
+    "node_modules",
+    "**/.*/",
+    "dist",
+    "build",
+    "public"
+  ]
 }

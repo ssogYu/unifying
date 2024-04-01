@@ -4,6 +4,7 @@ import resolve from '@rollup/plugin-node-resolve';
 import rollupTypescript from 'rollup-plugin-typescript2';
 import babel from '@rollup/plugin-babel';
 import { DEFAULT_EXTENSIONS } from '@babel/core';
+import { visualizer } from 'rollup-plugin-visualizer';
 import terser from '@rollup/plugin-terser';
 import pkg from './package.json' assert { type: 'json' };
 const path = require('path');
@@ -33,6 +34,11 @@ const config = defineConfig({
       babelHelpers: 'runtime',
       exclude: 'node_modules/**',
       extensions: [...DEFAULT_EXTENSIONS, '.ts'],
+    }),
+    visualizer({
+      open: isProduction,
+      gzipSize: true,
+      brotliSize: true,
     }),
     isProduction &&
       terser({
