@@ -1,7 +1,7 @@
 import { defineConfig } from 'rollup';
 import commonjs from '@rollup/plugin-commonjs';
 import resolve from '@rollup/plugin-node-resolve';
-import rollupTypescript from 'rollup-plugin-typescript2';
+import rollupTypescript from '@rollup/plugin-typescript';
 import babel from '@rollup/plugin-babel';
 import { DEFAULT_EXTENSIONS } from '@babel/core';
 import { visualizer } from 'rollup-plugin-visualizer';
@@ -27,19 +27,21 @@ const config = defineConfig({
     },
   ],
   plugins: [
-    commonjs(), //识别commonjs模式第三方依赖
-    resolve(), //解析第三方依赖
-    rollupTypescript(), //编译TypeScript
+    commonjs(),
+    resolve(), 
+    rollupTypescript({
+      tsconfig:'./tsconfig.json'
+    }), 
     babel({
       babelHelpers: 'runtime',
       exclude: 'node_modules/**',
       extensions: [...DEFAULT_EXTENSIONS, '.ts'],
     }),
-    visualizer({
-      open: isProduction,
-      gzipSize: true,
-      brotliSize: true,
-    }),
+    // visualizer({
+    //   open: isProduction,
+    //   gzipSize: true,
+    //   brotliSize: true,
+    // }),
     isProduction &&
       terser({
         compress: {

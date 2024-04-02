@@ -10,8 +10,7 @@
   "types": "dist/types/index.d.ts",
   "scripts": {
     "clean": "rimraf dist",
-    "build:type": "tsc -b ./tsconfig.types.json",
-    "build": "yarn clean && yarn build:type && cross-env NODE_ENV=prod rollup -c --bundleConfigAsCjs"
+    "build": "yarn clean && cross-env NODE_ENV=prod rollup -c --bundleConfigAsCjs"
   },
   "files": [
     "dist"
@@ -27,8 +26,8 @@
     "@rollup/plugin-commonjs": "^25.0.7",
     "@rollup/plugin-node-resolve": "^15.2.3",
     "@rollup/plugin-terser": "^0.4.4",
+    "@rollup/plugin-typescript": "^11.1.6",
     "rollup": "^4.9.4",
-    "rollup-plugin-typescript2": "^0.36.0",
     "rollup-plugin-visualizer": "^5.12.0"
   }
 }
