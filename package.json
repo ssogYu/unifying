@@ -1,13 +1,11 @@
 {
   "name": "unify",
   "private": true,
-  "workspaces": [
-    "packages/*"
-  ],
+  "workspaces":["packages/utils"],
   "dependencies": {},
   "scripts": {
     "prepare": "husky install",
-    "start:demo":"yarn workspace @unify/demo run dev",
+    "start:demo":"cd packages/demo && yarn dev",
     "build:utils": "yarn workspace @unify/utils run build"
   },
   "devDependencies": {
