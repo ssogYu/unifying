@@ -12,6 +12,9 @@
     "clean": "rimraf dist",
     "build": "yarn clean && cross-env NODE_ENV=prod rollup -c --bundleConfigAsCjs"
   },
+  "publishConfig": {
+    "access": "public"
+  },
   "files": [
     "dist"
   ],
