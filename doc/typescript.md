@@ -8,7 +8,7 @@ yarn add typesript -D -W
 
 ```
 公共：yarn tsc --init
-子模块：yarn workspace @unify/project_1 tsc --init
+子模块：yarn workspace @unifying/project_1 tsc --init
 ```
 
 ```

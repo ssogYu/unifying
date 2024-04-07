@@ -1,11 +1,11 @@
-# `@unify/utils`
+# `@unifying/utils`
 
 > TODO: description
 
 ## Usage
 
 ```
-const utils = require('@unify/utils');
+const utils = require('@unifying/utils');
 
 // TODO: DEMONSTRATE API
 ```

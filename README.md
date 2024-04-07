@@ -6,20 +6,20 @@
 **子模块创建规范**
 
 ```
-yarn lerna create @unify/project_1
+yarn lerna create @unifying/project_1
 ```
 
 ```
 ├── package.json
 └── packages/
-  ├── @unify/project_1/ # 推荐使用 `@<项目名>/<子项目名>` 的方式命名
+  ├── @unifying/project_1/ # 推荐使用 `@<项目名>/<子项目名>` 的方式命名
   │   ├── index.js
   │   └── package.json
-  └── @unify/project_2/
+  └── @unifying/project_2/
       ├── index.js
       └── package.json
 ```
 **项目列表**
 
-1. @unify/utils
+1. @unifying/utils
 
