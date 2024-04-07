@@ -125,7 +125,7 @@ module.exports = {
         errors: true,
         warnings: false,
       },
-      progress: true,
+      progress: false,
     },
   },
   mode: 'development',
