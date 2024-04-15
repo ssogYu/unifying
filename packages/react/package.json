@@ -1,7 +1,7 @@
 {
-  "name": "@unifying/utils",
+  "name": "@unifying/react",
   "version": "1.0.2",
-  "description": "js通用工具库",
+  "description": "react库",
   "author": "ssogYu <yushunsong@126.com>",
   "license": "MIT",
   "main": "dist/index.js",
@@ -21,11 +21,12 @@
     "package.json"
   ],
   "keywords": [
-    "tool",
-    "javascript",
     "typescript",
-    "rollup"
+    "react"
   ],
+  "dependencies": {
+    "react": "^18.2.0"
+  },
   "devDependencies": {
     "@rollup/plugin-babel": "^6.0.4",
     "@rollup/plugin-commonjs": "^25.0.7",
