@@ -1,7 +1,7 @@
 {
   "name": "unifying",
   "private": true,
-  "workspaces":["packages/utils","packages/react"],
+  "workspaces":["packages/utils","packages/react","packages/demo"],
   "dependencies": {},
   "scripts": {
     "prepare": "husky install",
