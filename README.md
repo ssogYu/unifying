@@ -6,7 +6,7 @@
 **子模块创建规范**
 
 ```
-yarn lerna create @unifying/project_1
+lerna create @unifying/project_1
 ```
 
 ```
@@ -22,4 +22,11 @@ yarn lerna create @unifying/project_1
 **项目列表**
 
 1. @unifying/utils
+2. @unifying/react
+
+**发布流程**
+```
+yarn build:all
+lerna publish
+```
 
