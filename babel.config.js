@@ -3,6 +3,7 @@ module.exports = {
     [
       '@babel/preset-env',
       {
+        modules: false,
         targets: {
           ie: 11,
         },
@@ -10,4 +11,7 @@ module.exports = {
     ],
   ],
   plugins: ["@babel/plugin-transform-runtime"],
+  ignore: [
+    "node_modules/**"
+  ]
 };

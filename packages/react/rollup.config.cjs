@@ -15,20 +15,26 @@ const config = defineConfig({
     {
       file: pkg.main,
       format: 'cjs',
+      sourcemap: true
     },
     {
       file: pkg.module,
-      format: 'es',
+      format: 'esm',
+      sourcemap: true
     },
     {
       name: 'utils',
       file: pkg.umd,
       format: 'umd',
+      globals: {
+        react: 'React',
+      },
+      sourcemap: true
     },
   ],
   plugins: [
-    commonjs(),
     resolve(), 
+    commonjs(),
     rollupTypescript({
       tsconfig:'./tsconfig.json'
     }), 
@@ -37,11 +43,11 @@ const config = defineConfig({
       exclude: 'node_modules/**',
       extensions: [...DEFAULT_EXTENSIONS, '.ts'],
     }),
-    // visualizer({
-    //   open: isProduction,
-    //   gzipSize: true,
-    //   brotliSize: true,
-    // }),
+    visualizer({
+      open: isProduction,
+      gzipSize: true,
+      brotliSize: true,
+    }),
     isProduction &&
       terser({
         compress: {

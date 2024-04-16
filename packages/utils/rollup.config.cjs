@@ -15,15 +15,18 @@ const config = defineConfig({
     {
       file: pkg.main,
       format: 'cjs',
+      sourcemap: true
     },
     {
       file: pkg.module,
-      format: 'es',
+      format: 'esm',
+      sourcemap: true
     },
     {
       name: 'utils',
       file: pkg.umd,
       format: 'umd',
+      sourcemap: true
     },
   ],
   plugins: [
