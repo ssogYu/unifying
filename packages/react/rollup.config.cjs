@@ -28,6 +28,7 @@ const config = defineConfig({
       format: 'umd',
       globals: {
         react: 'React',
+        'react-dom': 'ReactDOM',
       },
       sourcemap: true
     },
@@ -43,11 +44,11 @@ const config = defineConfig({
       exclude: 'node_modules/**',
       extensions: [...DEFAULT_EXTENSIONS, '.ts'],
     }),
-    visualizer({
-      open: isProduction,
-      gzipSize: true,
-      brotliSize: true,
-    }),
+    // visualizer({
+    //   open: isProduction,
+    //   gzipSize: true,
+    //   brotliSize: true,
+    // }),
     isProduction &&
       terser({
         compress: {
@@ -58,5 +59,6 @@ const config = defineConfig({
       }),
   ],
   strictDeprecations: true,
+  external: ['react', 'react-dom']
 });
 export default config;
