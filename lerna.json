@@ -2,7 +2,7 @@
   "version": "1.0.6",
   "npmClient": "yarn",
   "useWorkspaces": true,
-  "packages": ["packages/utils", "packages/react", "packages/demo"],
+  "packages": ["packages/*"],
   "command": {
     "publish": {
       "ignoreChanges": ["packages/demo"]

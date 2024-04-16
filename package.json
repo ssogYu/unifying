@@ -2,16 +2,14 @@
   "name": "unifying",
   "private": true,
   "workspaces": [
-    "packages/utils",
-    "packages/react",
-    "packages/demo"
+    "packages/*"
   ],
-  "dependencies": {},
   "scripts": {
     "prepare": "husky install",
     "start:demo": "cd packages/demo && yarn dev",
     "build:utils": "yarn workspace @unifying/utils run build",
-    "build:react": "yarn workspace @unifying/react run build"
+    "build:react": "yarn workspace @unifying/react run build",
+    "build:all": "yarn build:react && yarn build:utils"
   },
   "devDependencies": {
     "@babel/cli": "^7.23.4",
