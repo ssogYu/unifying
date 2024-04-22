@@ -23,7 +23,7 @@ const config = defineConfig({
       sourcemap: true
     },
     {
-      name: 'utils',
+      name: 'unifyingReact',
       file: pkg.umd,
       format: 'umd',
       globals: {
