@@ -44,11 +44,11 @@ const config = defineConfig({
       exclude: 'node_modules/**',
       extensions: [...DEFAULT_EXTENSIONS, '.ts'],
     }),
-    // visualizer({
-    //   open: isProduction,
-    //   gzipSize: true,
-    //   brotliSize: true,
-    // }),
+    visualizer({
+      open: isProduction,
+      gzipSize: true,
+      brotliSize: true,
+    }),
     isProduction &&
       terser({
         compress: {

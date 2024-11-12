@@ -25,7 +25,7 @@ const syleLoaders = (loader) => {
 };
 
 module.exports = {
-  entry: resolvePath('./index.tsx'),
+  entry: resolvePath('./src/index.tsx'),
   output: {
     path: resolvePath('./dist'),
     filename: '[name].js',
