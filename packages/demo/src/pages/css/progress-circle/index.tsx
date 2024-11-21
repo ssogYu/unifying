@@ -3,7 +3,7 @@ import './index.less';
 
 export const ProgressCircle = () => {
   useLayoutEffect(() => {
-    setValue(30);
+    setValue(100);
   }, []);
   const setValue = (value: number) => {
     const root = document.querySelector(':root') as any;
