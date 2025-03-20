@@ -1,6 +1,6 @@
 {
   "name": "@unifying/demo",
-  "version": "1.0.10",
+  "version": "1.0.11",
   "description": "",
   "author": "shunsong.yu <shunsong.yu@ly.com>",
   "license": "MIT",
@@ -16,8 +16,8 @@
     "@babel/preset-typescript": "^7.24.1",
     "@types/react": "^18.2.79",
     "@types/react-dom": "^18.2.25",
-    "@unifying/react": "^1.0.10",
-    "@unifying/utils": "^1.0.10",
+    "@unifying/react": "^1.0.11",
+    "@unifying/utils": "^1.0.11",
     "babel-loader": "^9.1.3",
     "css-loader": "^6.10.0",
     "html-webpack-plugin": "^5.6.0",
