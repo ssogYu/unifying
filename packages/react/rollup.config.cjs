@@ -9,6 +9,7 @@ import terser from '@rollup/plugin-terser';
 import pkg from './package.json' assert { type: 'json' };
 const path = require('path');
 const isProduction = process.env.NODE_ENV === 'prod';
+const shouldOpenAnalyzer = process.env.ANALYZE === 'true' || process.env.ANALYZE === '1';
 const config = defineConfig({
   input: path.resolve(__dirname, 'src/index.ts'),
   output: [
@@ -45,7 +46,7 @@ const config = defineConfig({
       extensions: [...DEFAULT_EXTENSIONS, '.ts'],
     }),
     visualizer({
-      open: isProduction,
+      open: shouldOpenAnalyzer,
       gzipSize: true,
       brotliSize: true,
     }),
