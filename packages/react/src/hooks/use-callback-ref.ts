@@ -6,12 +6,12 @@ import { useSafeLayoutEffect } from './use-safe-layout-effect';
  * @param fn
  * @returns
  */
-export const useCallbackRef = <T extends (...args) => unknown>(fn: T | undefined): T => {
+export const useCallbackRef = <T extends (...args: never[]) => unknown>(fn: T | undefined): T => {
   const ref = useRef(fn);
 
   useSafeLayoutEffect(() => {
     ref.current = fn;
   });
 
-  return useCallback(((...args) => ref?.current?.(...args)) as T, []);
+  return useCallback(((...args: Parameters<T>) => ref.current?.(...args)) as T, []);
 };
