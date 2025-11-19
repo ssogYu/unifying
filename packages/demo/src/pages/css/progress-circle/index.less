@@ -1,41 +1,46 @@
 :root {
-    --value: 0;
-  }
+  --value: 0;
+}
+
 .semicircle-box {
-    width: 400px;
-   height: 400px;
-   position: relative;
-   margin-bottom: 20px;
- }
- .semicircle-plan {
-   width: 400px;
-   height: 400px;
-   background: conic-gradient(#3481FD 0, #3481FD 50%, #f8f8f8 50%, #f8f8f8 100%);
-   border-radius: 50%;
-   transform: rotate(calc(var(--value)* 1.8deg + 90deg));
-   animation: rotate 0.8s ease-in;
- }
- @keyframes rotate {
-    0% {
-        transform: rotate(calc(0* 1.8deg + 90deg));
-    }
-    100% {
-        transform: rotate(calc(var(--value)* 1.8deg + 90deg));
-    }
- }
- .cover {
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    background-color: white;
-    transform: scale(0.8);
-    border-radius: 50%;
-    z-index: 5;
-    top: 0;
+  width        : 400px;
+  height       : 400px;
+  position     : relative;
+  margin-bottom: 20px;
+}
+
+.semicircle-plan {
+  width        : 400px;
+  height       : 400px;
+  background   : conic-gradient(#3481FD 0, #3481FD 50%, #f8f8f8 50%, #f8f8f8 100%);
+  border-radius: 50%;
+  transform    : rotate(calc(var(--value)* 1.8deg + 90deg));
+  animation    : rotate 0.8s ease-in;
+}
+
+@keyframes rotate {
+  0% {
+    transform: rotate(calc(0* 1.8deg + 90deg));
   }
-  .semicircle-box-hidden{
-    width: 400px;
-    height: 200px;
-    overflow: hidden;
+
+  100% {
+    transform: rotate(calc(var(--value)* 1.8deg + 90deg));
   }
-  
+}
+
+.cover {
+  position        : absolute;
+  width           : 100%;
+  height          : 100%;
+  background-color: white;
+  transform       : scale(0.8);
+  border-radius   : 50%;
+  z-index         : 5;
+  top             : 0;
+}
+
+.semicircle-box-hidden {
+  width   : 400px;
+  height  : 200px;
+  overflow: hidden;
+}

@@ -36,7 +36,7 @@ export const deepClone = function (sourceData: any, hash = new WeakMap()) {
   for (const key of Reflect.ownKeys(sourceData)) {
     cloneObj[key] =
       isComplexDataType(sourceData[key]) &&
-      typeof sourceData[key] !== "function"
+        typeof sourceData[key] !== "function"
         ? deepClone(sourceData[key], hash)
         : sourceData[key];
   }
