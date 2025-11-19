@@ -15,6 +15,24 @@ interface IsEmptyOptions {
   /** 自定义空值判断函数 */
   customValidator?: (value: any) => boolean;
 }
+/**
+ * 辅助函数：判断是否为纯对象
+ */
+function isPlainObject(value: unknown): value is Record<string, any> {
+  if (typeof value !== 'object' || value === null) {
+    return false;
+  }
+
+  const proto = Object.getPrototypeOf(value);
+  return proto === Object.prototype || proto === null;
+}
+
+/**
+ * 辅助函数：判断是否为有效日期
+ */
+function isValidDate(date: Date): boolean {
+  return date instanceof Date && !isNaN(date.getTime());
+}
 
 /**
  * 判断值是否为空的通用工具函数
@@ -131,24 +149,6 @@ export const isEmpty = (value: unknown, options: IsEmptyOptions = {}): boolean =
   return false;
 }
 
-/**
- * 辅助函数：判断是否为纯对象
- */
-function isPlainObject(value: unknown): value is Record<string, any> {
-  if (typeof value !== 'object' || value === null) {
-    return false;
-  }
-
-  const proto = Object.getPrototypeOf(value);
-  return proto === Object.prototype || proto === null;
-}
-
-/**
- * 辅助函数：判断是否为有效日期
- */
-function isValidDate(date: Date): boolean {
-  return date instanceof Date && !isNaN(date.getTime());
-}
 
 
 
