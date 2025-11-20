@@ -15,17 +15,6 @@ interface IsEmptyOptions {
   /** 自定义空值判断函数 */
   customValidator?: (value: any) => boolean;
 }
-/**
- * 辅助函数：判断是否为纯对象
- */
-function isPlainObject(value: unknown): value is Record<string, any> {
-  if (typeof value !== 'object' || value === null) {
-    return false;
-  }
-
-  const proto = Object.getPrototypeOf(value);
-  return proto === Object.prototype || proto === null;
-}
 
 /**
  * 辅助函数：判断是否为有效日期
@@ -60,82 +49,90 @@ export const isEmpty = (value: unknown, options: IsEmptyOptions = {}): boolean =
     return true;
   }
 
-  // NaN
-  if (nanAsEmpty && typeof value === 'number' && Number.isNaN(value)) {
-    return true;
+  const valueType = typeof value;
+
+  // 处理基本类型
+  switch (valueType) {
+    case 'string':
+      return trimString ? (value as string).trim().length === 0 : (value as string).length === 0;
+
+    case 'number':
+      if (nanAsEmpty && Number.isNaN(value)) return true;
+      if (zeroAsEmpty && value === 0) return true;
+      return false;
+
+    case 'boolean':
+      return falseAsEmpty && value === false;
+
+    case 'symbol':
+    case 'bigint':
+      return false;
+
+    case 'function':
+      return false;
   }
 
-  // 布尔值 false
-  if (falseAsEmpty && value === false) {
-    return true;
-  }
-
-  // 数字 0
-  if (zeroAsEmpty && value === 0) {
-    return true;
-  }
-
-  // 字符串
-  if (typeof value === 'string') {
-    return trimString ? value.trim().length === 0 : value.length === 0;
-  }
-
-  // 数组
-  if (Array.isArray(value)) {
-    if (value.length === 0) return true;
-    // 深度检查：所有元素都为空
-    if (deep) {
-      return value.every(item => isEmpty(item, options));
+  // 处理对象类型
+  if (valueType === 'object') {
+    // 数组
+    if (Array.isArray(value)) {
+      if (value.length === 0) return true;
+      // 深度检查：所有元素都为空
+      if (deep) {
+        return value.every(item => isEmpty(item, options));
+      }
+      return false;
     }
-    return false;
-  }
 
-  // Set
-  if (value instanceof Set) {
-    if (value.size === 0) return true;
-    if (deep) {
-      return Array.from(value).every(item => isEmpty(item, options));
+    // Date
+    if (value instanceof Date) {
+      return !isValidDate(value);
     }
-    return false;
-  }
 
-  // Map
-  if (value instanceof Map) {
-    if (value.size === 0) return true;
-    if (deep) {
-      return Array.from(value.values()).every(item => isEmpty(item, options));
+    // Set
+    if (value instanceof Set) {
+      if (value.size === 0) return true;
+      if (deep) {
+        return Array.from(value).every(item => isEmpty(item, options));
+      }
+      return false;
     }
-    return false;
-  }
 
-  // Date
-  if (value instanceof Date) {
-    return !isValidDate(value);
-  }
+    // Map
+    if (value instanceof Map) {
+      if (value.size === 0) return true;
+      if (deep) {
+        return Array.from(value.values()).every(item => isEmpty(item, options));
+      }
+      return false;
+    }
 
-  // 正则表达式
-  if (value instanceof RegExp) {
-    return false; // 正则对象本身不为空
-  }
+    // WeakMap 和 WeakSet - 永远不为空（无法判断大小）
+    if (value instanceof WeakMap || value instanceof WeakSet) {
+      return false;
+    }
 
-  // 函数
-  if (typeof value === 'function') {
-    return false; // 函数不视为空
-  }
+    // RegExp
+    if (value instanceof RegExp) {
+      return false;
+    }
 
-  // Promise
-  if (value instanceof Promise) {
-    return false; // Promise 对象本身不为空
-  }
+    // Promise
+    if (value instanceof Promise) {
+      return false;
+    }
 
-  // ArrayBuffer / TypedArray
-  if (value instanceof ArrayBuffer || ArrayBuffer.isView(value)) {
-    return (value as ArrayBuffer).byteLength === 0;
-  }
+    // ArrayBuffer 和 TypedArray
+    if (value instanceof ArrayBuffer) {
+      return value.byteLength === 0;
+    }
 
-  // 普通对象（包括无原型对象）
-  if (typeof value === 'object' && value !== null && !Array.isArray(value)) {
-    const keys = Object.keys(value);
+    if (ArrayBuffer.isView(value)) {
+      return value.byteLength === 0;
+    }
+
+    // 普通对象
+    const keys = Object.keys(value as object);
     if (keys.length === 0) return true;
 
     // 深度检查：所有属性值都为空
@@ -145,15 +142,8 @@ export const isEmpty = (value: unknown, options: IsEmptyOptions = {}): boolean =
     return false;
   }
 
-  // 其他情况视为非空
   return false;
 }
-
-
-
-
-
-
 
 
 // ============= 基础使用 =============
