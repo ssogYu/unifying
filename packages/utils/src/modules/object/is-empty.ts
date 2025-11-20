@@ -133,8 +133,8 @@ export const isEmpty = (value: unknown, options: IsEmptyOptions = {}): boolean =
     return (value as ArrayBuffer).byteLength === 0;
   }
 
-  // 普通对象
-  if (isPlainObject(value)) {
+  // 普通对象（包括无原型对象）
+  if (typeof value === 'object' && value !== null && !Array.isArray(value)) {
     const keys = Object.keys(value);
     if (keys.length === 0) return true;
 

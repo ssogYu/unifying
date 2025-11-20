@@ -10,7 +10,10 @@
   "types": "dist/types/index.d.ts",
   "scripts": {
     "clean": "rimraf dist",
-    "build": "yarn clean && cross-env NODE_ENV=prod rollup -c --bundleConfigAsCjs"
+    "build": "yarn clean && cross-env NODE_ENV=prod rollup -c --bundleConfigAsCjs",
+    "test": "jest",
+    "test:watch": "jest --watch",
+    "test:coverage": "jest --coverage"
   },
   "publishConfig": {
     "access": "public"

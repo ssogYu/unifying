@@ -9,7 +9,11 @@
     "start:demo": "cd packages/demo && yarn dev",
     "build:utils": "yarn workspace @unifying/utils run build",
     "build:react": "yarn workspace @unifying/react run build",
-    "build:all": "yarn build:react && yarn build:utils"
+    "build:all": "yarn build:react && yarn build:utils",
+    "test": "yarn test:utils && yarn test:react",
+    "test:utils": "yarn workspace @unifying/utils run test",
+    "test:react": "yarn workspace @unifying/react run test",
+    "test:coverage": "yarn workspace @unifying/utils run test:coverage && yarn workspace @unifying/react run test:coverage"
   },
   "devDependencies": {
     "@babel/cli": "^7.23.4",
